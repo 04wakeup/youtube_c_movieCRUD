@@ -1,0 +1,11 @@
+extends layouts/main
+
+block content
+    .form-container 
+        form(action="/create", method="post")  
+            input(type="text", placeholder="Title", name="title", required=true)
+            input(type="text", placeholder="Year", name="year", required=true)
+            input(type="text", placeholder="Rating", name="rating", required=true)
+            textarea(name="synopsis", placeholder="Synopsis", required=true)
+            input(type="text", placeholder="Genres", name="genres", required=true)
+            input(type="submit", value="Create Movie")
