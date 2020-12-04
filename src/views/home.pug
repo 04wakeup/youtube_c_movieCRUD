@@ -2,8 +2,13 @@ extends layouts/main
 include mixins/movieBlock
 
 block content
-    .movies  
+    .title
+        h1 #{pageTitle}
+    .movies 
         each movie in movies 
             +movieBlock({
-                title: movie.title
+                id: movie.id,
+                title: movie.title,
+                year: movie.year,
+                rating: movie.rating
             })

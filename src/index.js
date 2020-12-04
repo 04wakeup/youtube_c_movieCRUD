@@ -14,4 +14,9 @@ app.use(localsMiddleware);
 app.use("/", movieRouter);
 
 // Codesanbox does not need PORT :)///////// //
-app.listen(() => console.log(`✅  Server Ready!`));
+// app.listen(() => console.log(`✅  Server Ready!`));
+const PORT = process.env.PORT || 4000; // find PORT or use default as set
+
+const handleListening = () => console.log(`listening on: http://localhost:${PORT}`);
+
+app.listen(PORT, handleListening);

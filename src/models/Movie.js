@@ -15,24 +15,25 @@ const MovieSchema = mongoose.Schema({
   // title, year, rating, synopsis, genres
   title: {
     type: String,
-    required: "Title is required"
+    min: [3, "Too short"],
+    required: "Title is required",
   },
   year: {
     type: Number,
-    required: "Year is required"
+    required: "Year is required",
   },
   rating: {
     type: Number,
-    required: "Rating is required"
+    required: "Rating is required",
   },
   synopsis: {
     type: String,
-    required: "Synopsis is required"
+    required: "Synopsis is required",
   },
   genres: {
-    type: String,
-    required: "Genres is required"
-  }
+    type: Array,
+    required: "Genres is required",
+  },
 });
 
 if (YOUR_USERNAME === null || typeof YOUR_USERNAME !== "string") {
@@ -41,9 +42,7 @@ if (YOUR_USERNAME === null || typeof YOUR_USERNAME !== "string") {
   THIS LINE WILL REMIND YOU IF YOU HAVEN'T ADDED IT
   PLEASE DONT REMOVE THIS LINE.
   */
-  throw Error(
-    "❌  Please add your username in the line 10 of models/Movie.js  ❌"
-  );
+  throw Error("❌  Please add your username in the line 10 of models/Movie.js  ❌");
 }
 
 if (YOUR_USERNAME.includes("@")) {

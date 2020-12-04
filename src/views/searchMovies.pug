@@ -1,0 +1,13 @@
+extends layouts/main 
+include mixins/movieBlock 
+
+block content
+  h1 #{header}
+  .movies
+    each movie in movies 
+      +movieBlock({
+        id: movie.id,
+        title: movie.title,
+        year: movie.year,
+        rating: movie.rating
+      })

@@ -1,0 +1,12 @@
+extends layouts/main
+
+block content 
+    .movie__info
+       h1.movie__title=movie.title 
+       h3.movie__synopsis=movie.synopsis 
+       if movie.genres
+        ul 
+            each genre in movie.genres
+                if(genre)
+                    li=genre 
+       a(href=`/${movie.id}/edit`) Edit
